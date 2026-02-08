@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 - Coding for the Web</title>
+    <style>
+        body {
+            max-width: 70em;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+      <h1>Week 3: Grading</h1>
+  <p>Open your browser's Developer Tools and view the Console.</p>
+  <p>If everything is set up correctly, you should see a message in the Console.</p>
+
+
+    <script>
+        // new project!
+        // ask the user for their "grade" and tell them what letter grade they got
+
+        var grade = parseInt(prompt("What was your grade?"));
+        var letterGrade = "A";
+
+        if (grade >= 80 && grade < 90) {
+            letterGrade = "B"; 
+        }
+
+        if (grade >= 70 && grade < 80) { 
+            letterGrade = "C"; 
+        }
+
+        if (grade >= 60 && grade < 70) {
+            letterGrade = "D";
+        }
+
+        if (grade < 60) {
+            letterGrade = "F";
+        }
+
+        console.log("Your letter grade is " + letterGrade);
+
+    </script>
+    
+</body>
+</html>

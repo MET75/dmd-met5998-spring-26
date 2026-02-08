@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Week 3 — Coding for the Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <h1>Week 3: Control Flow</h1>
+  <p>Open your browser's Developer Tools and view the Console.</p>
+  <p>If everything is set up correctly, you should see a message in the Console.</p>
+
+  <script>
+    console.log("Welcome to week 3");
+
+    var username = "Mohammad";
+    console.log("My name is " + username);
+
+    // var age = 29;
+
+    var age = prompt("What is your age?");
+
+    console.log("My age is " + age);
+    //console.log(typeof age); 
+
+    var years = prompt("Enter a number of years..."); 
+
+    // In [years] years, you will be [newage]
+
+    // first, add years to age
+    // but first we need to convert them to numbers/integers
+    var newage = parseInt(age) + parseInt(years);
+
+    console.log("In " + years + " years, you will be " + newage);
+    
+    //console.log(typeof newage);
+
+    var drinkingAge = 21;
+    //console.log(typeof drinkingAge);
+
+    var canDrink = newage >= drinkingAge;
+    //console.log(canDrink);
+    //console.log(typeof canDrink);
+
+    // In [years] years, you [can or cannot] legally drink
+
+    if (canDrink) {
+        console.log("In " + years + " years, you can legally drink.");
+        console.log("If you want to you can."); 
+    } else {
+        console.log("In " + years + " years, you cannot legally drink.");
+    }
+
+  </script>
+</body>
+</html>
