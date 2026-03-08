@@ -1,1 +1,151 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week-05</title>
 
+    <style>
+        h1, h2 {
+            color: red;
+
+        }
+
+        h3 {
+
+        }
+
+        #div1 {
+            color: blueviolet;
+        }
+        #div2{
+            color: brown;
+        }
+
+        .display-none{
+            display:none!important;
+
+        }
+
+        .red-text{
+            color: red;
+            text-decoration: underline;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <h1>Welcome to week 5</h1>
+    <h2>This is my h2</h2>
+
+    <div id="div1">
+        <p>This is my frist div</p>
+
+    </div>
+
+    <div id="div2">
+        <h3>This is div2</h3>
+        <p>This is my second div</p>
+    </div>
+
+    <input type="number" id="gradeInput" placeholder="Enter your grade">
+    <button onclick="calculateLetterGrade(Number(document.querySelector('#gradeInput').value),100)">Calculate Grade</button>
+
+    <p id="result"></p>
+
+
+
+    <script>
+        //var numberGrade = prompt("What was your number grade?")
+        //var letterGrade = "A";
+
+        //if(numberGrade < 90){
+        //    letterGrade= "B"
+        //    nextNumberGrade = 90;
+
+        //} else if (numberGrade <80 && numberGrade >=70){
+        //    letterGrade = "C"
+        //    nextNumberGrade = 80;}
+        //differnce = nextNumberGrade - numberGrade
+
+        //alert(;etterGrade);
+
+        //alert ("Your Letter Grade Is:" + numberGrade)
+        //alert( "You are"+difference + "away from the next Letter grade");
+        
+        function addTen(number){
+            console.log(number+10)
+        }
+
+        function calculateLetterGrade(numberGrade,anotherNumber){
+            //this id where the logic to calculate a letter grade goes
+
+        alert (numberGrade)
+        alert (anotherNumber)
+
+        var letterGrade = "F";
+        var nextNumberGrade = 60;
+        var difference = 0;
+
+        if(numberGrade >= 90){
+            letterGrade = "A";
+            nextNumberGrade = 100;
+
+        } else if(numberGrade < 90 && numberGrade >= 80){
+            letterGrade = "B";
+            nextNumberGrade = 90;
+
+        } else if(numberGrade <80 && numberGrade >=70){
+            letterGrade = "C";
+            nextNumberGrade = 80;
+
+        } else if(numberGrade <70 && numberGrade >=60){
+            letterGrade = "D";
+            nextNumberGrade = 70;
+
+        } else {
+            letterGrade = "F";
+            nextNumberGrade = 60;
+        }
+
+        difference = nextNumberGrade - numberGrade;
+
+        if(numberGrade >= 0 || numberGrade <= 100){
+            document.querySelector("#result").innerHTML = "Your number grade is " + numberGrade + ". Your letter grade is " + letterGrade + ". You are " + difference + " away from the next letter grade.";
+        }
+
+        }
+
+        //calculateLetterGrade(90,400);
+        //calculateLetterGrade(40,10);
+        //calculateLetterGrade(45,100);
+
+        addTen(50);
+        addTen(45);
+        addTen(500000);
+        addTen("20");
+
+        var header = document.querySelector("h1");
+          console.log (typeof header);
+          header.innerHTML = "Hello!This is my new content!";
+
+        //header.classlist.add('display-none')
+
+        var myParagraph = document.querySelector("#div2 p");
+            myParagraph.innerHTML = "Something else entirely!";
+
+        var myH3 = document.querySelector("#div2 h3");
+            myH3.innerHTML = "This is my updated h3";
+            myH3.classList.add("red-text");
+
+        
+
+
+
+    </script>
+
+</body>
+</html>
