@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function practice</title>
+</head>
+<body>
+    <h1>Function practice</h1>
+
+    <div>
+
+        <input type="number" id="num1"  placeholder="enter num1">
+        <input type="number" id="num2"  placeholder="enter num2">
+
+        <button id="calculate"> Get The Sum</button>
+    </div>
+
+    <div id="grade-calc">
+        <label for="numberGrade">Enter your Number</label>
+        <input type="number" id="numberGrade" placeholder="enter your number grade">
+
+        <button id="calcGrade">Calculate Letter Grade</button>
+    </div>
+
+    <div id="console">
+        <h2>Our Console</h2>
+        <p>Test Paragrapg #1</p>
+        <p>Test Paragrapg #2</p>
+    </div>
+
+
+
+    <script>
+        var myConsole = document.querySelector("#console")
+        //place a paragraph that says "Hello world" into my #console
+
+        function log(message){
+           // myConsole.innerHTML += "<p>Hello World!</p>";
+           // myConsole.innerHTML += "<p>My name is Mo!</p>";
+
+           myConsole.innerHTML += "<p>" + message + "</p>";
+        }
+        
+        function add (num1, num2){
+            var sum = num1 + num2;
+
+            return sum;
+        }
+        
+        var calcButton = document.querySelector("#calculate");
+
+        calcButton.addEventListener("click",function(){
+            var num1 = parseInt(document.querySelector("#num1").value);
+            var num2 = parseInt(document.querySelector("#num2").value);
+
+            log(add(num1, num2));
+
+        });
+
+        log("Hello World");
+        log("my name is Mo!");
+        log("it is Thursday");
+        log(add(12,40));
+
+        function calcLetterGrade(numberGrade){
+            var letterGrade = "A";
+            
+            if(numberGrade <= 100 && numberGrade >= 93){
+                letterGrade = "A";
+
+            } else if(numberGrade < 93 && numberGrade >= 90){
+                letterGrade = "A-";
+
+            } else if (numberGrade <90 && numberGrade >=87){
+                letterGrade = "B+"
+            } else if (numberGrade <87 && numberGrade >= 83){
+                letterGrade = "B";
+            } else if (numberGrade < 83 && numberGrade >= 80){
+                letterGrade = "B-";
+            } else if (numberGrade < 80 && numberGrade >= 77){
+                letterGrade = "C+";
+            } else if (numberGrade < 77 && numberGrade >= 74){
+                letterGrade = "C";
+            } else if (numberGrade < 74 && numberGrade >= 70){
+                letterGrade = "C-";
+            } else if (numberGrade < 70 && numberGrade >= 67){
+                letterGrade = "D+";
+            } else if (numberGrade < 67){
+                letterGrade = "F";
+            }
+
+            return letterGrade;
+        }
+
+        var gradeButton = document.querySelector("#calcGrade");
+        
+        gradeButton.addEventListener("click", function (){
+
+            var numberGrade= parseInt(document.querySelector("#numberGrade").value)
+
+            var myLetterGrade= calcLetterGrade(numberGrade);
+
+            var message = "Your letter grade is " + myLetterGrade;
+
+            log(message);
+        });
+
+    </script>
+    
+</body>
+</html>
