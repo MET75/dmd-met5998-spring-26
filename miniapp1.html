@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iran Word Perception</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+
+    .app {
+      max-width: 720px;
+      margin: 50px auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 52px;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 28px;
+    }
+
+    .input-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
+    }
+
+    input {
+      width: 320px;
+      padding: 14px 12px;
+      font-size: 18px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 14px 18px;
+      font-size: 18px;
+      cursor: pointer;
+      border: 1px solid #999;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+
+    .map-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .map-area {
+      min-height: 180px;
+      border: 3px solid #333;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      justify-content: center;
+      gap: 10px;
+      background: #fafafa;
+    }
+
+    .word-tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 16px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .positive {
+      background: green;
+    }
+
+    .negative {
+      background: red;
+    }
+
+    .neutral {
+      background: gray;
+    }
+
+    .average-text {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .gradient-bar {
+  width: 420px;
+  max-width: 100%;
+  height: 22px;
+  margin: 0 auto 18px auto;
+  border-radius: 12px;
+  position: relative;
+  background: linear-gradient(to right, red, gray, green);
+}
+
+    .marker {
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 34px;
+      background: black;
+      border-radius: 4px;
+    }
+
+    .count-text {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    ol {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+      padding-left: 28px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .delete-btn {
+      margin-left: 10px;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Iran Word Perception App</h1>
+
+    <p class="question">
+      What is the first word that comes to mind when you hear Iran?
+    </p>
+
+    <div class="input-area">
+      <input type="text" id="wordInput" placeholder="Type one word" />
+      <button id="addBtn">Add Word</button>
+      <button id="deleteAllBtn">Delete All</button>
+    </div>
+
+    <div class="map-title">Iran Map</div>
+    <div id="mapArea" class="map-area"></div>
+
+    <p id="averageText" class="average-text">Average sentiment: Neutral</p>
+
+    <div class="gradient-bar">
+      <div id="marker" class="marker"></div>
+    </div>
+
+    <p id="countText" class="count-text">Total words: 0</p>
+
+    <ol id="wordList"></ol>
+  </div>
+
+  <script type="module" src="miniapp1.js"></script>
+</body>
+</html>
