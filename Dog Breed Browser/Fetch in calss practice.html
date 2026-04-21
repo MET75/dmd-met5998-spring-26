@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning about fetch</title>
+</head>
+<body>
+    <h1>learning about fetch</h1>
+    
+    <ul id="catFacts"></ul>
+
+    <script>
+        var simpleObject = {
+            name: "John",
+            role: "faculty"
+        };
+        console.log(simpleObject);
+
+        var catFacts = [
+            "John is not a fan of cats",
+            "John is allergic to cats",
+        ];
+
+        function renderList(){
+            const ulElement = document.getElementById('catFacts');
+            ulElement.innerHTML = '';
+            catFacts.forEach(fact => {
+                const li = document.createElement('li');
+                li.textContent = fact.attributes?.name || fact; 
+                ulElement.appendChild(li);
+            });
+        }
+
+        function getCatFacts(){
+            fetch('https://cat-fact.herokuapp.com/facts') 
+                .then(response => response.json())
+                .then(function(data){
+                    console.log("Cat data fetched");
+                    renderList();
+                })
+                .catch(err => console.log("Cat API Error (Ignore for now)"));
+        }
+
+        function getDogBreeds(){
+            fetch('https://dogapi.dog/api/v2/breeds?page[size]=10')
+                .then(response => response.json())
+                .then(function(data){
+                    var dogBreeds = data.data; 
+                    console.log("First Dog Breed:", dogBreeds[0]); 
+                    console.log("Name:", dogBreeds[0].attributes.name);  
+                    
+                    catFacts = dogBreeds; 
+                    renderList();
+                });
+        }
+
+        renderList();     
+        getDogBreeds();   
+        
+    </script>
+</body>
+</html>
