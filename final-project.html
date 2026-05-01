@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iran Word Cloud - Final Project</title>
+    <link rel="stylesheet" href="final-project.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>What is the first word</h1>
+            <h2>that comes to mind when you hear IRAN?</h2>
+        </header>
+
+        <div class="input-section" style="background-image: url('faruk.jpg');">
+            <div class="input-wrapper">
+                <input type="text" id="wordInput" placeholder="Type your word">
+                <button id="voiceBtn" title="Speak word">🎤</button>
+                <button id="addWordBtn">Add word</button>
+            </div>
+        </div>
+
+        <div id="mapWrapper" class="hidden">
+            <div id="mapContainer"></div>
+        </div>
+        
+        <div class="sentiment-bar">
+            <div id="sentimentIndicator" class="glass-indicator" style="left: 50%;"></div>
+        </div>
+
+        <div class="stats">
+            <p>Average sentiment: <span id="avgSentimentBadge" class="badge neutral">NEUTRAL</span></p>
+            <p>Total words: <span id="totalWords">0</span></p>
+            <button id="deleteAllBtn">Delete all</button>
+        </div>
+        
+        <div class="toolbar">
+            <input type="text" id="searchInput" placeholder="🔍 Search words...">
+
+            <select id="sortSelect">
+                <option value="newest">Sort by: Newest</option>
+                <option value="oldest">Sort by: Oldest</option>
+                <option value="alphabetical">Sort by: A-Z</option>
+            </select>
+        </div>
+        <div id="wordList" class="word-list"></div>
+    </div>
+
+<div class="interactive-bg">
+    <div class="halo halo-left"></div>
+    <div class="halo halo-right"></div>
+</div>
+
+<div class="main-content"></div> 
+    <script type="module" src="final-project.js"></script>
+</body>
+</html>
